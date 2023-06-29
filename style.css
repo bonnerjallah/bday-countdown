@@ -1,0 +1,128 @@
+*, body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color:black; 
+    color: #ffffff;
+}
+
+.container{
+    border: 2px solid black;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.funfact{
+    visibility: hidden;
+}
+
+.yearsOld{
+   text-align: center;
+   background-color: transparent;
+}
+
+.howOld{
+    background: transparent;
+}
+
+.sign{
+    width: 50%;
+    height: 40%;
+    font-size: 5rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.signImage{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+
+}
+
+.counterContainer{
+    width: 100%;
+    height:50%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(images/micky-white-i9OTdLEl9Qo-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+}
+
+.counter{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: space-evenly;    
+    background-image: url(images/micky-white-i9OTdLEl9Qo-unsplash.jpg);
+
+}
+
+.card{
+    border: 2px solid black;
+    width: 20%;
+    height: 100%;
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-image: url(images/rocco-stoppoloni-h6qnnmbkLBU-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+}
+
+.card h2{
+    font-size: 8rem;
+    color: rgb(235, 235, 244);
+    margin-top: -50px;
+    background-color: transparent;
+}
+
+span{
+    margin-bottom: -50px;
+    background: transparent;
+    font-size: 2.5rem;
+}
+
+.dateinput{
+    margin-top: 10px;
+    background: transparent;
+}
+
+.form{
+    background: transparent;
+}
+
+.form .date{
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    color: #070000;
+    background-color:#ffffff;
+
+}
+
+.bttn{
+    cursor: pointer;
+    color: #ffffff;
+    height: 3rem;
+    width: 100px;
+    margin: 2px;
+    font-size: 1.7rem;
+    border-radius: 10px;
+}
