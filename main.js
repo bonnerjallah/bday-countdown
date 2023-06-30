@@ -5,8 +5,6 @@ let hours = document.getElementById("hours");
 let mins = document.getElementById("mins");
 let secs = document.getElementById("secs");
 
-
-
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   formValidation();
@@ -145,13 +143,35 @@ function signImageChange() {
   }
 }
 
-function yearsOld () {
+function yearsOld() {
   const nowYear = new Date().getFullYear();
-  const birthYear = new Date(birthDateInput.value).getFullYear()
-  const age = nowYear - birthYear
+  const nowMonth = new Date().getMonth() + 1; // Adding 1 to get the current month (January is month 0)
+  const birthYear = new Date(birthDateInput.value).getFullYear();
+  const birthMonthInput = new Date(birthDateInput.value).getMonth() + 1; // Adding 1 to get the birth month
 
-  document.getElementById("until").innerHTML = `${age} Years Old `
+  let age;
+
+  if (birthMonthInput > nowMonth) {
+    age = nowYear - birthYear - 1; // Subtract 1 from the current year
+  } else if (birthMonthInput === nowMonth) {
+    const nowDay = new Date().getDate();
+    const birthDayInput = new Date(birthDateInput.value).getDate();
+
+    if (birthDayInput > nowDay) {
+      age = nowYear - birthYear - 1; // Subtract 1 from the current year
+    } else {
+      age = nowYear - birthYear;
+    }
+  } else {
+    age = nowYear - birthYear;
+  }
+
+  document.getElementById("until").innerHTML = `${age} Years Old`;
+  return age;
 }
+
+
+
 
 function countDownTimer() {
   // GET CURRENT DATE
@@ -196,9 +216,14 @@ function countDownTimer() {
   document.getElementById("mins").textContent = remainingMinutes;
   document.getElementById("secs").textContent = remainingSeconds;
 
-
-
   setInterval(countDownTimer, 1000)
-
-
 }
+
+let funfact = document.getElementById("funfact");
+
+funfact.addEventListener("click", (e) => {
+  e.preventDefault();
+  console.log("funfact");
+  funfact.classList.add("funfactDisplay");
+  funfact.style.visibility = "visible";
+});
